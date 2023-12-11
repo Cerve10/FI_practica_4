@@ -14,7 +14,18 @@ int main(){
         int count=1;
         char buf;
         if (fd < 0){
-                printf("Error: no es pot obrir l'arxiu %s. Comproba que estigui ben escrit.\n", nom_arxiu);}
+                printf("Error: no es pot obrir l'arxiu %s. Comproba que estigui ben escrit.\n", nom_arxiu);
+                exit(0)
+                }
+
+        if (nombre_linies <= 0){
+                printf("Error: el nombre de línies del fitxer és menor al demanat o zero\n");
+                exit(0)
+                }
+        else {
+                
+                
+                
         if (read(fd,&buf,count) < 0)
                 printf("Error: el nombre de línies del fitxer és menor al demanat o zero\n");
         else printf("%c",buf);}
