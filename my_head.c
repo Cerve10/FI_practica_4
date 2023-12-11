@@ -12,8 +12,8 @@ int main(){
         scanf("%d", &nombre_linies);
 
         int fd = open(nom_arxiu, O_RDONLY);
-        int count=1;
-        char buf;
+        int count=0;
+        char buf[1000000000000000], text[1000000000000000];
         if (fd < 0){
                 printf("Error: no es pot obrir l'arxiu %s. Comproba que estigui ben escrit.\n", nom_arxiu);
                 exit(0)
@@ -24,10 +24,14 @@ int main(){
                 exit(0)
                 }
                 
-        else {
-                
-                
-                
-        if (read(fd,&buf,count) < 0)
-                printf("Error: el nombre de línies del fitxer és menor al demanat o zero\n");
-        else printf("%c",buf);}
+        if (fd!= -1){
+                while (nombre_linies > count){
+                        read(fd, buf, 100000000);
+                        text[i] = buf[i];
+                        if (buf[i] == '\n') count++;
+                        i++;
+                }
+                printf("%s", text);
+        }
+        close(fd);
+}
