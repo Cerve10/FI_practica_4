@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int main(){
         char nom_arxiu[100];
@@ -22,6 +23,7 @@ int main(){
                 printf("Error: el nombre de línies del fitxer és menor al demanat o zero\n");
                 exit(0)
                 }
+                
         else {
                 
                 
