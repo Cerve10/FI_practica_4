@@ -16,12 +16,12 @@ int main(){
         char buf[1000000000000000], text[1000000000000000];
         if (fd < 0){
                 printf("Error: no es pot obrir l'arxiu %s. Comproba que estigui ben escrit.\n", nom_arxiu);
-                exit(0)
+                exit(1)
                 }
 
         if (nombre_linies <= 0){
                 printf("Error: el nombre de línies del fitxer és menor al demanat o zero\n");
-                exit(0)
+                exit(1)
                 }
                 
         if (fd!= -1){
