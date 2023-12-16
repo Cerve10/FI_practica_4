@@ -13,11 +13,13 @@ printf("Introdueix el nou nom de l'arxiu: ");
 scanf("%s",nombre_nuevo);
 if ((fd=open(arxivo,O_RDWR)) == -1){
 printf("Hi ha hagut un error a l'hora d'obrir l'arxiu \n");
+exit(1);
 }
 else {
 desc = open(nombre_nuevo, O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU );
 if (desc == -1){
 printf("Error creant el segon arxiu \n");
+exit(1);
 }
 else{
 char buf[9999999999];
