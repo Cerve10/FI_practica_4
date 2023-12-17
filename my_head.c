@@ -5,14 +5,14 @@
 
 int main(){
         char nom_arxiu[100];
-        int nombre_linies, i;
+        int nombre_linies;
         printf("Introdueix el nom de l'arxiu que vols llegir: ");
         scanf("%s", nom_arxiu);
         printf("Introdueix el nombre de línies a mostrar: ");
         scanf("%d", &nombre_linies);
 
         int fd = open(nom_arxiu, O_RDONLY);
-        int count=0;
+        int count=0, i=0;
         char buf[1000000000000000], text[1000000000000000];
         if (fd < 0){
                 printf("Error: no es pot obrir l'arxiu %s. Comproba que estigui ben escrit.\n", nom_arxiu);
