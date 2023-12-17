@@ -5,7 +5,7 @@
 
 int main(){
         char nom_arxiu[100];
-        int nombre_linies;
+        int nombre_linies, i;
         printf("Introdueix el nom de l'arxiu que vols llegir: ");
         scanf("%s", nom_arxiu);
         printf("Introdueix el nombre de línies a mostrar: ");
